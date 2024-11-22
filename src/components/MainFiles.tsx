@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Button } from './ui/button';
 import { generateMnemonic } from 'bip39';
 import MnemonicDisplay from './MnemonicDisplay';
+import SolanaWallet from './SolanaWallet';
+import EthWallet from './EthWallet';
 
 function MainFiles() {
   const [mnemonic, setMnemonic] = useState<Array<string>>([]);
@@ -26,9 +28,14 @@ function MainFiles() {
               key={index}
               index={index+1} 
             />
-          )
-          )
+          ))
         }
+      </div>
+      <div>
+        <SolanaWallet mnemonic={mnemonic} />
+      </div>
+      <div>
+        <EthWallet mnemonic={mnemonic} />
       </div>
     </div>
   )
